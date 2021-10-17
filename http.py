@@ -1,5 +1,4 @@
 
-
 import os
 import socket
 
@@ -116,10 +115,8 @@ class HTTPServer(TCPServer):
         if os.path.exists(path) and not os.path.isdir(path): # don't serve directories
             response_line = self.response_line(200)
 
-            # find out a file's MIME type
-            # if nothing is found, just send `text/html`
+            
             content_type =  'html'
-            #mimetypes.guess_type(path)[0] or
             extra_headers = {'Content-Type': content_type}
             response_headers = self.response_headers(extra_headers)
 
@@ -151,21 +148,12 @@ class HTTPServer(TCPServer):
 
 
 class HTTPRequest:
-    """Parser for HTTP requests. 
     
-    It takes raw data and extracts meaningful information about the incoming request.
-    Instances of this class have the following attributes:
-        self.method: The current HTTP request method sent by client (string)
-        self.uri: URI for the current request (string)
-        self.http_version = HTTP version used by  the client (string)
-    """
 
     def __init__(self, data):
         self.method = None
         self.uri = None
-        self.http_version = '1.1' # default to HTTP/1.1 if request doesn't provide a version
-
-        # call self.parse method to parse the request data
+        self.http_version = '1.1' 
         self.parse(data)
 
     def parse(self, data):
