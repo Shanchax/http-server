@@ -1,3 +1,5 @@
+
+
 import os
 import socket
 import mimetypes
@@ -5,7 +7,7 @@ import shutil
 import datetime
 from datetime import date
 
-
+ 
 class makesocket:
     
 
@@ -14,6 +16,8 @@ class makesocket:
         self.port = port
 
     def start(self):
+        
+
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((self.host, self.port))
@@ -34,15 +38,17 @@ class makesocket:
     
 
 
-class HTTPServer(makesocket)
+class HTTPServer(makesocket):
+    
 
     headers = {
+       
         'Content-Type': 'text/html',
         'Connection type' : 'keep-alive'
     }
 
     status_codes = {
-        200 : 'OK',
+        200: 'OK',
         201	: "Created",
         202	: "Accepted",
         204 : "No Content",
@@ -50,18 +56,17 @@ class HTTPServer(makesocket)
         400 : "Bad Request",
         401 : "Unauthorized",
         403 : "Forbidden",
-        404 : 'Not Found',
-        501 : 'Not Implemented',
+        404: 'Not Found',
+        501: 'Not Implemented',
 
     }
 
     def handle_request(self, data):
-        """Handles incoming requests"""
 
-        request = HTTPRequest(data) #
+        request = HTTPRequest(data) 
 
         try:
-            handler = getattr(self, 'handle_%s' % request.method)
+            handler = getattr(self, '%s' % request.method)
         except AttributeError:
             handler = self.HTTP_501_handler
 
@@ -76,7 +81,6 @@ class HTTPServer(makesocket)
 
     def response_headers(self, extra_headers=None):
         headers_copy = self.headers.copy() 
-
         if extra_headers:
             headers_copy.update(extra_headers)
 
@@ -85,25 +89,27 @@ class HTTPServer(makesocket)
         for h in headers_copy:
             headers += '%s: %s\r\n' % (h, headers_copy[h])
 
-        return headers.encode() # convert str to bytes
+        return headers.encode()
+        
+    def OPTIONS(self, request):
 
-    def handle_OPTIONS(self, request):
         response_line = self.response_line(200)
 
-        extra_headers = {'Allow': 'OPTIONS, GET , POST , PUT, DELETE'}
+        extra_headers = {'Allow': 'OPTIONS, GET'}
         response_headers = self.response_headers(extra_headers)
 
         blank_line = b'\r\n'
 
         return b''.join([response_line, response_headers, blank_line])
 
-    def handle_GET(self, request):
+    def GET(self, request):
 
         path = request.uri.strip('/') 
+
         if not path:
             path = 'index.html'
 
-        if os.path.exists(path) and not os.path.isdir(path): 
+        if os.path.exists(path) and not os.path.isdir(path):
             response_line = self.response_line(200)
             content_type  = mimetypes.guess_type(path)[0] or 'text/html'
             
@@ -151,8 +157,7 @@ class HTTPServer(makesocket)
                         pass
                     
                 else:
-                    destination = '/home/username/.local/share/Trash'
-                    shutil.move(path, destination )
+                    print('execute sudo chmod 777 ' + path)
             except(shutil.Error):
                 os.remove(path)
         else:
