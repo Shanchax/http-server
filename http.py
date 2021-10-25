@@ -42,7 +42,7 @@ class HTTPServer(makesocket)
     }
 
     status_codes = {
-        200: 'OK',
+        200 : 'OK',
         201	: "Created",
         202	: "Accepted",
         204 : "No Content",
@@ -50,8 +50,8 @@ class HTTPServer(makesocket)
         400 : "Bad Request",
         401 : "Unauthorized",
         403 : "Forbidden",
-        404: 'Not Found',
-        501: 'Not Implemented',
+        404 : 'Not Found',
+        501 : 'Not Implemented',
 
     }
 
