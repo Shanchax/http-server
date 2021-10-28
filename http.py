@@ -1,5 +1,4 @@
 
-
 import os
 import socket
 import mimetypes
@@ -8,7 +7,7 @@ import datetime
 from datetime import date
 
  
-class makesocket:
+class makesocket:  # making a tcp connection
     
 
     def __init__(self, host='127.0.0.1', port=1234):
@@ -38,7 +37,7 @@ class makesocket:
     
 
 
-class HTTPServer(makesocket):
+class HTTPServer(makesocket):  #extending oir tcp connection to form a http connection
     
 
     headers = {
