@@ -1,205 +1,87 @@
-
 import os
-import socket
-import mimetypes
-import shutil
+import sys
+import threading 
 import datetime
-from datetime import date
+from datetime import *
+from threading import Thread
+import socket
+from socket import *
+from config import *
+from threading import *
 
- 
-class makesocket:  # making a tcp connection
+
+"""using the concept of 501_handler in prevous code to 
+create a handler for status codes related to forbidden, etc ."""
+def status_handler(conn, scode, temp):
+    ip, client_thread, status_code = temp
+    status_code = scode
+    response = ''
+    if(scode == 415):
+        response += 'HTTP/1.1 {} Unsupported Media Type'.format(scode)
+    elif(scode == 404):
+        response += 'HTTP/1.1 {} Not founf'.format(scode)
+    elif(scode == 414):
+        response += 'HTTP/1.1 {} uri exceeds permissible length'.format(scode)
+    elif(scode == 503):
+        response += 'HTTP/1.1 {} server is busy ie thread limit reached'.format(scode)
+    elif(scode == 505):
+        response += 'HTTP/1.1 {} version not supported'.format(scode)    
+
+    elif(scode == 501):
+        response += 'HTTP/1.1 {} method not implemented'
+
+    response = '\r\nServer: ' + ip + '\r\n' + TODAY + '\r\n\r\n'
+    conn.send(response.encode())
+    active_threads.remove(conn) 
+    conn.close()
+    server(server_info)
+    return [ip, client_thread, scode]
+
+
+
     
 
-    def __init__(self, host='127.0.0.1', port=1234):
-        self.host = host
-        self.port = port
-
-    def start(self):
-        
-
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.bind((self.host, self.port))
-        s.listen()
-
-        print("server is listening  at", s.getsockname())
-
-        while True:
-            conn, addr = s.accept()
-            print("Connected by", addr)
-            data = conn.recv(2048) 
-
-            response = data
-
-            conn.sendall(response)
-            conn.close()
 
     
 
 
-class HTTPServer(makesocket):  #extending oir tcp connection to form a http connection
-    
-
-    headers = {
-       
-        'Content-Type': 'text/html',
-        'Connection type' : 'keep-alive'
-    }
-
-    status_codes = {
-        200: 'OK',
-        201	: "Created",
-        202	: "Accepted",
-        204 : "No Content",
-        304 : "Not Modified",
-        400 : "Bad Request",
-        401 : "Unauthorized",
-        403 : "Forbidden",
-        404: 'Not Found',
-        501: 'Not Implemented',
-
-    }
-
-    def handle_request(self, data):
-
-        request = HTTPRequest(data) 
-
-        try:
-            handler = getattr(self, '%s' % request.method)
-        except AttributeError:
-            handler = self.HTTP_501_handler
-
-        response = handler(request)
-        return response
-
-    def response_line(self, status_code):
-        reason = self.status_codes[status_code]
-        response_line = 'HTTP/1.1 %s %s\r\n' % (status_code, reason)
-
-        return response_line.encode() 
-
-    def response_headers(self, extra_headers=None):
-        headers_copy = self.headers.copy() 
-        if extra_headers:
-            headers_copy.update(extra_headers)
-
-        headers = ''
-
-        for h in headers_copy:
-            headers += '%s: %s\r\n' % (h, headers_copy[h])
-
-        return headers.encode()
-        
-    def OPTIONS(self, request):
-
-        response_line = self.response_line(200)
-
-        extra_headers = {'Allow': 'OPTIONS, GET'}
-        response_headers = self.response_headers(extra_headers)
-
-        blank_line = b'\r\n'
-
-        return b''.join([response_line, response_headers, blank_line])
-
-    def GET(self, request):
-
-        path = request.uri.strip('/') 
-
-        if not path:
-            path = 'index.html'
-
-        if os.path.exists(path) and not os.path.isdir(path):
-            response_line = self.response_line(200)
-            content_type  = mimetypes.guess_type(path)[0] or 'text/html'
-            
-            extra_headers = {'Content-Type': content_type}
-            response_headers = self.response_headers(extra_headers)
-
-            with open(path, 'rb') as f:
-                response_body = f.read()
+def server(server_info):
+    socket, file_extension, connection_status, SIZE, active_threads, status_code, ip, port = server_info
+    for _ in iter(int, 1):
+        conn, addr = socket.accept() # connectionsocket = request, addr = port,ip
+        start = 0
+        active_threads.append(conn)  # add connections
+        if not (len(active_threads) < 20): #at a time server can handle at most 20 threads
+            temp = [ip, active_threads, status_code]
+            status_handler(conn, 503, temp)
+            conn.close() #closing the connection not the socket
         else:
-            response_line = self.response_line(404)
-            response_headers = self.response_headers()
-            response_body = b'<h1>404 Not Found</h1>'
+            temp2 = [socket, file_extension, conn, SIZE, active_threads, status_code, ip,port]
+            new_thread = Thread(bridgeFunction, (conn, addr, start,temp2 ))
+            new_thread.start()
 
-        blank_line = b'\r\n'
-
-        response = b''.join([response_line, response_headers, blank_line, response_body])
-
-        return response
-
-    def HTTP_501_handler(self, request):
-
-        response_line = self.response_line(status_code=501)
-
-        response_headers = self.response_headers()
-
-        blank_line = b'\r\n'
-
-        response_body = b'<h1>501 Not Implemented</h1>'
-
-        return b"".join([response_line, response_headers, blank_line, response_body])
-    
-
-    def DELETE( self , request):
-        path = request.uri.strip('/')
-        isItDir = os.path.isdir(path)
-        isItFile = os.path.isfile(path)
-        option_list = path.split('/')
-        response = ''
-        if( isItFile):
-            scode = 200
-            response += 'HTTP/1.1 200 OK'
-            try:
-                if (os.access(path, os.W_OK)):
-                    if (os.access(path, os.R_OK)):
-                        pass
-                    
-                else:
-                    print('execute sudo chmod 777 ' + path)
-            except(shutil.Error):
-                os.remove(path)
-        else:
-            scode = 400
-            response += 'HTTP/1.1 400 Bad Request'
-        response += '\r\nServer: ' + self.s.gethostbyname()
-        response += '\r\nConnection: keep-alive'
-        response += '\r\n' + date.today()
-        response += '\r\n\r\n'
-        response = response.encode()
-        return response
-        
-        
-        
-class HTTPRequest:
-    
-
-    def __init__(self, data):
-        self.method = None
-        self.uri = None
-        self.http_version = '1.1' 
-
-        
-        self.parse(data)
-
-    def parse(self, data):
-        lines = data.split(b'\r\n')
-
-        request_line = lines[0] 
-
-        words = request_line.split(b' ') 
-
-        self.method = words[0].decode() 
-        if len(words) > 1:
-    
-            self.uri = words[1].decode() 
-
-        if len(words) > 2:
-        
-            self.http_version = words[2]
+    socket.close()
 
 
 
-if __name__ == '__main__':
-    server = HTTPServer()
-    server.start()
+
+
+if __name__ =='__main__':
+    ip = '127.0.0.1'
+    status_code = 0
+    month = MONTH
+    file_type = FORMAT2
+    file_extension = FORMAT
+    connection_status = True
+    active_threads = []
+    socket = socket(AF_INET, SOCK_STREAM)
+    port = int(sys.argv[1])
+    socket.bind(('', port))
+    socket.listen(5)
+    server_info = [socket, file_extension,connection_status, SIZE, active_threads, status_code, ip, port]
+    server(server_info)
+    sys.exit()
+
+
+
+
