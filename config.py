@@ -93,6 +93,7 @@ username and password for approval of delete request method
 '''
 USERNAME = 'http' # delete can only be done after checking Auth
 PASSWORD = 'sudo' # Keep this secret folks
+MAX_REQUEST = 20
 
 
 '''
