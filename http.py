@@ -2,6 +2,8 @@ import os
 import sys
 import threading 
 import datetime
+import shutil
+from shutil import *
 from urllib.parse import *
 from datetime import *
 from threading import Thread
@@ -12,8 +14,93 @@ from supplement import*
 
 
 
+class http:
+
+    def get(conn, url , dictionary , query_string , httpmethod , method_info):
+        tcpsocket, file_extension, conn, ip, port, status_code, active_threads = method_info
+        build_response = ''
+        fileflag = os.path.isfile(url)
+        dirflag = os.path.isdir(url)
+        readflag = os.access(url, os.R_OK)
+        writeflag = os.access(url, os.W_OK)
+        if (fileflag):
+            status_code = 200
+            build_response += 'HTTP/1.1 200 OK'
+            if(readflag):
+                if(writeflag):
+
+
+
+        
+
+
+
+
+
+
+
+
+
+    def delete(self,url, conn, entitydata, dictionary, delete_info):
+        ip, port,status_code, active_threads = delete_info
+        build_response = ''
+        #auth = 'Authorization' in dictionary.keys()
+        print("Checking authorization")
+        options = url.split('/')
+        isdeleteallowed = 'delete' in options
+        fileflag =  os.path.isfile(url)
+        dirflag  = os.path.isdir(url)
+        if(entitydata) > 1 or isdeleteallowed or dirflag :
+            status_code = 405
+            build_response += 'HTTP/1.1 405 Method Not Allowed' + '\r\nAllow: GET, HEAD, POST, PUT'
+
+        elif(fileflag):
+            status_code = 200
+            build_response += 'HTTP/1.1 200 OK'
+            if (os.access(url, os.W_OK)):
+                if (os.access(url, os.R_OK)):
+                    #can proceed 
+                    pass
+                else:
+                    ip, active_threads, status_code = status_handler(conn, 403, [ip, active_threads, status_code])
+            else:
+                ip, active_threads, status_code = status_handler(conn, 403, [ip, active_threads, status_code])
+                s_flag = shutil.move(url, DELETE)
+            if(s_flag == shutil.Error):
+                os.remove(url)
+
+        else :
+            status_code = 400        
+            build_response += 'HTTP/1.1 400 Bad Request'
+        build_response += '\r\nServer: ' + ip  + '\r\nConnection: keep-alive' + '\r\n' + date() + '\r\n\r\n'
+        response = build_response.encode()
+        conn.send(response)
+        return [ip, port , status_code] 
+
+httpserver = http()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def request_handler(conn, addr , start,reqinfo):
-    file = b""
+    
     tcpsocket, file_extension, connection_status, SIZE, active_threads, status_code, ip,port = reqinfo
     utf_flag = 0
     for _ in iter(int, 1):
@@ -77,7 +164,8 @@ def request_handler(conn, addr , start,reqinfo):
 
 
         elif(httpmethod == 'PUT'):
-            recv = httpserver.put(conn, addr, entitydata, file, url, dictionary, utf_flag, status_code, [ip, active_threads, status_code])
+            file = b""
+            recv = httpserver.put(conn, addr, entitydata, file , url, dictionary, utf_flag, status_code, [ip, active_threads, status_code])
         elif(httpmethod == 'DELETE'):
             glob = httpserver.delete(url, conn, entitydata, dictionary, [ip,port, status_code, active_threads])
         else:
@@ -85,7 +173,8 @@ def request_handler(conn, addr , start,reqinfo):
 
              status_handler(conn, 505 , [ ip, active_threads, status_code])
 
-
+        conn.close()
+        active_threads.remove(conn)
 
 
 
@@ -112,14 +201,16 @@ def request_handler(conn, addr , start,reqinfo):
 
 
 
-#using the concept of 501_handler in prevous code to 
-#create a handler for status codes related to forbidden, and pther client error 4xx 
-
+''' 
+Status_handler : handles status codes of the form 4xx and 5xx that lead 
+to unsuccessful actions. FInally, close the connection and remove thread from
+active threads list
+'''
 def status_handler(conn, scode, temp):
     ip, active_threads, status_code = temp
     status_code = scode
     response = ''
-    if(scode == 415):
+    if(scode == 415 or scode):
         response += 'HTTP/1.1 {} Unsupported Media Type'.format(scode)
     elif(scode == 404):
         response += 'HTTP/1.1 {} Not founf'.format(scode)
