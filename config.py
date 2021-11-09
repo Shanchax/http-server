@@ -1,5 +1,8 @@
 
 import os
+from datetime import date
+
+TODAY = date.today()
 
 '''Max buffer size to accept from a client'''
 SIZE = 8192 # 8*1024 = 8MB
