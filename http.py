@@ -1,388 +1,560 @@
-import os
-import sys
-import threading 
-import datetime
-import shutil
-from shutil import *
-from urllib.parse import *
-from datetime import *
-from threading import Thread
 from socket import *
-from config import *
-from threading import *
-from supplement import*
+import datetime 
+import os
+import time
+import random
+import threading
+from _thread import *
+import shutil		            		 # to implement delete method
+import csv          					 # used in put and post method to insert data
+import base64		            		 # used for decoding autherization header in delete method
+import sys
+import logging
+from tkinter.constants import X
+from config import *                    # import variables
+import signal   
+from urllib.parse import *	 # for parsing URL/URI
+import os
+import time                        # signal to handle Ctrl+C and other SIGNALS
 
+SIZE = 8192 
 
+class http_methods:
 
-class http:
-
-    def get(self, conn, url , dictionary , query_string , httpmethod , method_info):
-        tcpsocket, file_extension, conn, ip, port, status_code, active_threads = method_info
+    def GET_HEAD(self,tcpconnection, url, headers_dict, query, method, arg_list):
+        tcpsocket, f_x, cget_flag, connection_status, ip, portnum, status_code, cookie_id, activethreads = arg_list
+        isItFile = os.path.isfile(url)
+        isItDir = os.path.isdir(url)
         build_response = ''
-        fileflag = os.path.isfile(url)
-        dirflag = os.path.isdir(url)
-        readflag = os.access(url, os.R_OK)
-        writeflag = os.access(url, os.W_OK)
-
-        if( not(fileflag) and not(dirflag)):
-            url.rstrip('/')
-        if (fileflag):
-            status_code = 200
+        if isItFile:
             build_response += 'HTTP/1.1 200 OK'
-            if(readflag):
-                if(writeflag):
+            status_code = 200
+            if (os.access(url, os.R_OK)):
+                if (os.access(url, os.W_OK)):
                     pass
-                else :
-                    ip, active_threads , status_code = status_handler(conn, 403,[ip, active_threads, status_code])
             else:
-                ip, active_threads , status_code = status_handler(conn, 403,[ip, active_threads, status_code])
-            size = os.path.getsize(url)
-            file = open(url, "rb")
-            data = file.read(size)        
-        elif (dirflag):
-            status_code = 200
+                glob = status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
+                ip, activethreads, status_code = glob
+            try:
+                size = os.path.getsize(url)
+                f = open(url, "rb")
+                data = f.read(size)
+            except:
+                glob = status_hanlder(tcpconnection, 500, [ip, activethreads, status_code])
+                ip, activethreads, status_code = glob
+        elif isItDir:
+            dir_list = os.listdir(url)
             build_response += 'HTTP/1.1 200 OK'
-            listofdir = os.listdir(url)
-            if(readflag):
-                if(writeflag):
+            status_code = 200
+            # if it is a directory
+            if os.access(url, os.R_OK):
+                if (os.access(url, os.W_OK)):
                     pass
                 else:
-                    ip, active_threads , status_code = status_handler(conn, 403,[ip, active_threads, status_code])
+                    glob = status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
+                    ip, activethreads, status_code = glob
             else:
-                ip, active_threads , status_code = status_handler(conn, 403,[ip, active_threads, status_code])
-
-            for x in listofdir:
-                if x.startswith('.'):
-                    listofdir.remove(i)
-
-
-        for header in dictionary:
+                glob = status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
+                ip, activethreads, status_code = glob
+            for i in dir_list:
+                if i.startswith('.'):
+                    dir_list.remove(i)
+                else:
+                    pass
+        
+        build_response += '\r\n' + 'Set-Cookie: id=' + str(cookie_id) + MAXAGE
+        cookie_id += random.randint(1,10)
+        for header in headers_dict:
             if header == 'User-Agent':
-                if(fileflag):
-                    build_response += '\r\nServer: ' + ip           
-                    DATE = (' ').join(time.ctime().split(' ')) 
-                    build_response += '\r\nDate: ' + DATE + '\r\n' + last_modified(url)
-                elif(dirflag):
-                    build_response += '\r\nServer: ' + ip           
+                if isItDir:
+                    build_response += '\r\nServer: ' + ip
+                elif isItFile:
+                    l = time.ctime().split(' ')
+                    l[0] = l[0] + ','
+                    build_response += '\r\nServer: ' + ip
+                    build_response += '\r\nDate: ' + (' ').join(l)
+                    build_response += '\r\n' + last_modified(url)
                 else:
                     pass
             elif header == 'Host':
                 pass
-            elif header == 'Accept-Language':
-                build_response += '\r\nContent-Language: ' + dictionary[header]
+            elif header == 'Accept':
+                if isItFile:
+                    try:
+                        file_ext = os.path.splitext(url)
+                        if file_ext[1] in f_x.keys():
+                            req_temp = f_x[file_ext[1]]
+                            temp = 0
+                        else:
+                            req_temp = 'text/plain'
+                            temp = 1
+                        req_temp = '\r\nContent-Type: '+ req_temp
+                        build_response += req_temp
+                    except:
+                        glob = status_hanlder(tcpconnection, 415, [ip, activethreads, status_code])
+                        ip, activethreads, status_code = glob
+                        # status_code = 415
+                elif isItDir:
+                    req_temp = '\r\nContent-Type: text/html'
+                    build_response += req_temp
+                else:
+                    pass
+            
             elif header == 'Accept-Encoding':
-                if fileflag:
-                    build_response += '\r\nContent-Length: ' + str(size)    
-            elif header == 'Connection':  
-                if(fileflag):
+                if isItFile:
+                    req_temp = '\r\nContent-Length: ' + str(size)
+                    build_response += req_temp
+                else:
+                    pass
+
+
+            elif header == 'Connection':
+                if isItFile:
                     connection_status = True
-                    build_response += '\r\nConnection: keep-alive'  
-                if(dirflag):
+                    build_response += '\r\nConnection: keep-alive'
+                elif isItDir:
                     connection_status = False
                     build_response += '\r\nConnection: close'
-            #elif header == 'If-Modified-Since':
-               # if_modify(dictionary[state], entity)
-                    
-            elif header == 'Accept':
-                try:
-                 if fileflag :
-                     file_ext = os.path.splitext(url)
-                     if file_ext[1] in file_extension.keys():
-                        build_response += '\r\nContent-Type: ' + file_extension[file_ext[1]]
-                     else:
-                        build_response += '\r\nContent-Type: ' + 'text/plain'
-                except :
-                    ip,active_threads,status_code = status_handler(conn, 415, [ip,active_threads,status_code])
-        
-
-
-        if(fileflag):
-            build_response += '\r\n\r\n'
-            if httpmethod == 'GET':
-                response = build_response.encode()
-                conn.send(response)
-                conn.sendfile(file)
-            if httpmethod ='HEAD':
-                response = build_response.encode()
-                conn.send(response)
-
-        return [tcpsocket, file_extension, conditional_get, conn, ip, serverport, scode, IDENTITY]
-
-
-
-
-
-
-
-
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-                         
-
+                else:
+                    pass
+            elif header == 'If-Modified-Since':
+                if_modify(headers_dict[header], url)
             
 
+            elif header == 'Accept-Language':
+                req_temp = '\r\nContent-Language: ' + headers_dict[header]
+                build_response += req_temp
+
+            else:
+                continue
+
+        if isItDir and method == 'GET':
+            build_response += '\r\n\r\n'
+            build_response += '\r\n<!DOCTYPE html>'
+            build_response += '\r\n<html>\n<head>'
+            build_response += '\r\n<title>Directory listing</title>'
+            build_response += '\r\n<meta http-equiv="Content-type" content="text/html;charset=UTF-8" /></head>'
+            build_response += '\r\n<body><h1>Directory listing..</h1><ul>'
+            for line in dir_list:
+                if url == '/':
+                    link = 'http://' + ip + ':' + str(portnum) + url + line
+                    l = '\r\n<li><a href ="'+link+'">'+line+'</a></li>'
+                    build_response += l
+                else:
+                    link = 'http://' + ip + ':' + str(portnum) + url + '/'+ line
+                    l = '\r\n<li><a href ="'+link+'">'+line+'</a></li>'
+                    build_response += l
+            build_response += '\r\n</ul></body></html>'
+            encoded = build_response.encode()
+            tcpconnection.send(encoded)
+            tcpconnection.close()
+        elif len(query) > 0 and not isItFile and not isItDir:
+            build_response = ''
+            row = ''
+            url = CSVFILE
+            fields = ''
+            for d in query:
+                fields += d + ','
+                for i in query[d]:
+                    row += i + ','
+            file_exists = os.path.exists(url)
+            if file_exists:
+                status_code = 200
+                build_response += 'HTTP/1.1 200 OK'
+                fi = open(url, "a")
+                row = list(row.split(",")) 
+                csvwriter = csv.writer(fi)
+                csvwriter.writerow(row)
+            else:
+                fi = open(url, "w")
+                build_response += 'HTTP/1.1 201 Created'
+                status_code = 201
+                build_response.append('Location: ' + url)
+                csvwriter = csv.writer(fi)
+                csvwriter.writerow(fields)
+                csvwriter.writerow(row)
+            fi.close()
+            build_response += '\r\nServer: ' + ip + '\r\n'+ date()
+            f = open(WORKFILE, "rb")
+            build_response += '\r\nContent-Language: en-US,en'
+            size = os.path.getsize(WORKFILE)
+            req_temp = '\r\nContent-Length: ' + str(size)
+            build_response += '\r\nContent-Type: text/html'
+            build_response += req_temp + '\r\n' +last_modified(url) + '\r\n\r\n'
+            encoded = build_response.encode()
+            tcpconnection.send(encoded)
+            tcpconnection.sendfile(f)
+        elif isItFile:
+            build_response += '\r\n\r\n'
+            if cget_flag == False and method == 'GET':
+                encoded = build_response.encode()
+                tcpconnection.send(encoded)
+                tcpconnection.sendfile(f)
+            elif cget_flag == False and method == 'HEAD':
+                encoded = build_response.encode()
+                tcpconnection.send(encoded)
+            elif cget_flag == True and (method == 'GET' or method == 'HEAD'):
+                status_304(tcpconnection, url, [ip, status_code])
+        else:
+            gl = status_hanlder(tcpconnection, 400, [ip, activethreads, status_code])
+            ip, activethreads, status_code = gl
+        return [tcpsocket, f_x, cget_flag, connection_status, ip, portnum, status_code, cookie_id]
         
-
-
-
-
-
-
-
-
-
-    def delete(self,url, conn, entitydata, dictionary, delete_info):
-        ip, port,status_code, active_threads = delete_info
+    def POST(self,ent_body, tcpconnection, headers_dict, arg_list):
+        ip, portnum,status_code = arg_list
         build_response = ''
-        #auth = 'Authorization' in dictionary.keys()
-        print("Checking authorization")
-        options = url.split('/')
-        isdeleteallowed = 'delete' in options
-        fileflag =  os.path.isfile(url)
-        dirflag  = os.path.isdir(url)
-        if(entitydata) > 1 or isdeleteallowed or dirflag :
-            status_code = 405
-            build_response += 'HTTP/1.1 405 Method Not Allowed' + '\r\nAllow: GET, HEAD, POST, PUT'
+        url = os.getcwd() + '/post.txt'
+        #query_string = parse_qs(ent_body)
+        if (not(os.access(url, os.W_OK))):
+            status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
+        print("No, I'm here")
 
-        elif(fileflag):
+        if os.path.isfile(url):
+            fi = open(url, "a")
+            status_code = 200
+            build_response += 'HTTP/1.1 {} OK'.format(status_code)
+            fi.write(ent_body)
+            fi.close()
+            print("I'm here")
+        else:
+            print("creating file")
+            fi = open(url, "a")
+            status_code = 201
+            build_response += 'HTTP/1.1 {} Created'.format(status_code)
+            
+            build_response += '\r\nLocation: ' + url
+            fi.write(ent_body)
+            fi.close()
+        
+        build_response += '\r\nServer: ' + ip
+        build_response += date()
+        f = open(WORKFILE, "rb")
+        size = os.path.getsize(WORKFILE)
+        build_response += '\r\nContent-Language: en-US,en' + '\r\nContent-Type: text/html'+ '\r\n' + 'Content-Length: ' + str(size) + '\r\n' + last_modified(url) + '\r\n\r\n'+                                                 
+        response = build_response.encode()
+        print(build_response)
+        tcpconnection.send(response)
+        tcpconnection.sendfile(f)
+        return [ip, portnum, status_code]
+
+    
+    def DELETE(self,url, tcpconnection, ent_body, headers_dict, arg_list):
+        ip, portnum,status_code, activethreads = arg_list
+        isItDir = os.path.isdir(url)
+        isItFile = os.path.isfile(url)
+        print(f"deleting {url} ")
+        # print(isItFile)
+        options= url.split('/')
+        build_response = ''
+        '''
+        if  not('DELETE' in options) 
+            status_code = 405
+            build_response += 'HTTP/1.1 405 Method Not Allowed'
+            build_response += '\r\nAllow: GET, HEAD, POST, PUT'
+        '''    
+        if isItFile:
             status_code = 200
             build_response += 'HTTP/1.1 200 OK'
-            if (os.access(url, os.W_OK)):
-                if (os.access(url, os.R_OK)):
-                    #can proceed 
-                    pass
+            try:
+                if (os.access(url, os.W_OK)):
+                    if (os.access(url, os.R_OK)):
+                        pass
+                    else:
+                        glob = status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
+                        ip, activethreads, status_code = glob
                 else:
-                    ip, active_threads, status_code = status_handler(conn, 403, [ip, active_threads, status_code])
-            else:
-                ip, active_threads, status_code = status_handler(conn, 403, [ip, active_threads, status_code])
-                s_flag = shutil.move(url, DELETE)
-            if(s_flag == shutil.Error):
+                    glob = status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
+                    ip, activethreads, status_code = glob
+                shutil.move(url, DELETE)
+            except shutil.Error:
                 os.remove(url)
-
-        else :
-            status_code = 400        
+        else:
+            status_code = 400
             build_response += 'HTTP/1.1 400 Bad Request'
-        build_response += '\r\nServer: ' + ip  + '\r\nConnection: keep-alive' + '\r\n' + date() + '\r\n\r\n'
-        response = build_response.encode()
-        conn.send(response)
-        return [ip, port , status_code] 
+        build_response += '\r\nServer: ' + ip
+        build_response += '\r\nConnection: keep-alive'
+        build_response += '\r\n' + date()
+        build_response += '\r\n\r\n'
+        encoded = build_response.encode()
+        tcpconnection.send(encoded)
+        return [ip, portnum, status_code]
+
+httpserver = http_methods()
+
+#function to check if the resource has been modified or not since the date in HTTP request 
+def if_modify(state, url):
+    global cget_flag, month
+    valid = False
+    day = state.split(' ')
+    if len(day) == 5:
+        valid = True
+    if valid:
+        m = month[day[1]]
+        date = int(day[2])
+        t = day[3].split(':')
+        t[0], t[1], t[2] = int(t[0]), int(t[1]), int(t[2])
+        y = int(day[4])
+        ti = datetime.datetime(y, m, date, t[0], t[1], t[2])
+        hsec = int(time.mktime(ti.timetuple()))
+        fsec = int(os.path.getmtime(url))
+        if hsec == fsec:
+            cget_flag = True
+        elif hsec < fsec:
+            cget_flag = False
+    return cget_flag
+
+#function to return current date
+def date():
+    #  Sun, 06 Nov 1994 08:49:37 GMT  ; RFC 822, updated by RFC 1123
+    now = datetime.datetime.now()
+    datenow = now.strftime('%A,%d %B %Y %H:%M:%S ')
+    datenow += "GMT"
+    datestring = 'Date: ' + datenow
+    return datestring
+
+#function to give response if server is busy
+def status_hanlder(tcpconnection, code, arg_list):
+    ip, activethreads, status_code = arg_list
+    status_code = code
+    build_response = ''
+    if (code == '505') or (code == 505):
+        build_response += 'HTTP/1.1 505 HTTP version not supported'
+    elif (code == '415') or (code == 415):
+        build_response += 'HTTP/1.1 415 Unsupported Media Type'
+    elif (code == '403') or (code == 403):
+        build_response += 'HTTP/1.1 403 Forbidden'
+    elif (code == '404') or (code == 404):
+        build_response += 'HTTP/1.1 404 Not Found'
+    elif (code == '414') or (code == 414):
+        build_response += 'HTTP/1.1 414 Request-URI Too Long'
+    elif (code == '500') or (code == 500):
+        build_response += 'HTTP/1.1 500 Internal Server Error'
+    elif (code == '503') or (code == 503):
+        build_response += 'HTTP/1.1 503 Server Unavailable'
+    elif (code == '411') or (code == 411):
+        build_response += 'HTTP/1.1 411 length required'
+
+    build_response += '\r\nServer: ' + ip
+    build_response += '\r\n' + date()
+    build_response += '\r\n\r\n'
+    if code == 505:
+        build_response += '\r\nSupported Version - HTTP/1.1 \n Rest Unsupported'
+    encoded = build_response.encode()
+    tcpconnection.send(encoded)
+    logging.info('	{}	{}\n'.format(tcpconnection, status_code))
+    try:
+        activethreads.remove(tcpconnection)
+        tcpconnection.close()
+    except:
+        pass
+    server_runner([tcpsocket, f_x, cget_flag, connection_status, SIZE, activethreads, status_code, ip, cookie_id, portnum])
+    return [ip, activethreads, status_code]
 
 
-
-httpserver = http()
-
-
-
-
-
-
-
-
+#function for conditional get implementation
+def status_304(tcpconnection, url, arg_list):
+    ip, status_code = arg_list
+    status_code = 304
+    build_response = ''
+    build_response += 'HTTP/1.1 304 Not Modified' + '\r\n' + date() + '\r\n' + last_modified(url) + '\r\nServer: ' + ip + '\r\n\r\n'
+    response = build_response.encode()
+    tcpconnection.send(response)
 
 
-
-
-
-
-
-
-
-
-
-
-
-def request_handler(conn, addr , start,reqinfo):
-    
-    tcpsocket, file_extension, connection_status, SIZE, active_threads, status_code, ip,port = reqinfo
-    utf_flag = 0
+#function which operates between response and requests
+def request_handler(tcpconnection, addr, start, glob):
+    tcpsocket, f_x, cget_flag, conn, SIZE, activethreads, status_code, ip, cookie_id, portnum = glob
+    cget_flag = False
+    urlflag = 0
+    f_flag = 0
+    filedata = b""
+    connection_status = True
     for _ in iter(int, 1):
-        request = conn.receive(SIZE)
-        try :
-            request = request.decode('utf-8')
-            request_split = request.split('\r\n\r\n')
-        except (UnicodeDecodeError):
-            utf_flag = 1
-            req_split = request.split(b'\r\n\r\n')
-            req_split[0] = req_split[0].decode(errors = 'ignore')    #the requestline ex GET ....url ..... HTTP 1.1
-        #seperatinf status line and header lines from entity body 
-        #STATUS LINE
-        #HEADER LINE
-        #crlfcrlf  we split here
-        #entitybody
-        if len(req_split) == 1 or not(len(req_split >1)):
-            status_handler(conn, 505, [ip, active_threads, status_code])
-        entitydata = req_split[1]
-        reqlineandheader = req_split.split('\r\n')
-        reqline = reqlineandheader[0].split('')
-        httpmethod = reqline[0]
-        url = reqline[1]
-        httpversion = reqline[2]
-        if(len(url) > MAX_URL):
-            status_handler(conn, 414, [ip, active_threads, status_code])
-            conn.close
-        else:
-            print('url lenght is admissible, can proceed')
+        if not connection_status:
+            # print("Connection not established")
+            break
+        if SIZE > 0:
             pass
-        if(url == '/'):
+        else:
+            break
+        try:
+            message = tcpconnection.recv(SIZE)
+            print(message)
+        except OSError:
+            message = tcpconnection.recv(SIZE)
+        try:
+            f_flag = 0
+            message = message.decode('utf-8')
+            req_list = message.split('\r\n\r\n')
+            # print(req_list)
+        except UnicodeDecodeError:
+            f_flag = 1
+            # if you're using non UTF-8 chars
+            req_list = message.split(b'\r\n\r\n')
+            req_list[0] = req_list[0].decode(errors = 'ignore')
+            # print(req_list)
+        if len(req_list) == 1:
+            status_hanlder(tcpconnection, 505, [ip, activethreads, status_code])
+            print("\nBlank line expected at the end\n")
+            break
+        elif len(req_list) > 1:
+            # every line ends with a \r\n so for only headers it'll create ['req', '']
+            pass
+        else:
+            status_hanlder(tcpconnection, 505, [ip, activethreads, status_code])
+            print("Error in headers\n")
+            break
+        try:
+            LOG.write(((addr[0]) + '\n' + req_list[0] + '\n\n'))
+        except:
+            pass
+        # build_response = ''
+        # header_len = len(header_list)
+        ent_body = req_list[1]
+        header_list = req_list[0].split('\r\n')
+        request_line = header_list[0].split(' ')
+        if len(req_list) < 2:
+            status_hanlder(tcpconnection, 505, [ip, activethreads, status_code])
+        else:
+            pass
+        url = request_line[1]
+        method = request_line[0]
+        if url == '/':
             url = os.getcwd()
-        url,query_string = breakdown(url) #here url is actually just a path
-        if(len(url) > MAX_URL):
-            status_handler(conn, 414, [ip, active_threads, status_code])
-            conn.close()
-        
-        
-        version_num = httpversion.split('/')[1]    
-        if not(version_num == '1.1'):
-            status_handler (conn , 505 , [ip, active_threads, status_code])
-            print("Please enter a valid version_num")
-
-        request_line = reqlineandheader.pop(0)
+        #elif (url == favicon) or (url == 'favicon') or (url == 'favicon.ico'):
+        #    url = FAVICON
+        url, query = urlbreak(url)
+        if (len(url) > MAX_URL and urlflag == 0):
+            status_hanlder(tcpconnection, 414, [ip, activethreads, status_code])
+            tcpconnection.close()
+            break
+        elif len(url) <= MAX_URL:
+            # print("working Fine")
+            urlflag = 1
+            pass
+        else:
+            urlflag = 1
+        version = request_line[2]
+        try:
+            version_num = version.split('/')[1]
+            if (version_num == RUNNING_VERSION):
+                # print("using HTTP 1.1")
+                pass
+            elif not (version_num == RUNNING_VERSION):
+                status_hanlder(tcpconnection, 505, [ip, activethreads, status_code])
+        except IndexError:
+            # print("EXPECTED HTTP version number")
+            status_hanlder(tcpconnection, 505, [ip, activethreads, status_code])
+        request_line = header_list.pop(0)
+        headers_dict = {}
         i = 0
-        dictionary = {}
-        while i < len(reqlineandheader):
-            headers = reqlineandheader[i]
-            list = headers.split(': ')
-            dictionary[list[0]] = list[1]
-            i = i+1
+        while i < len(header_list):
+            line = header_list[i]
+            line_list = line.split(': ')
+            headers_dict[line_list[0]] = line_list[1]
+            i += 1
+        if  (method == 'HEAD') or (method == 'GET'):
+            # tcpconnection, url, headers_dict, query, method, glob
+            glob = httpserver.GET_HEAD(tcpconnection, url, headers_dict, query, method, 
+            [tcpsocket, f_x, cget_flag, connection_status, ip, portnum, status_code, cookie_id, activethreads])
 
-        method_info = [tcpsocket, file_extension, conn, ip, port, status_code, active_threads]    
-        
-        if(httpmethod =='GET') or (httpmethod == 'HEAD'):
-            recv = httpserver.get(conn, url , dictionary , query_string , httpmethod , method_info)
-
-
-        elif (httpmethod == 'POST'):
-            recv = httpserver.post(entitydata, conn, dictionary [ip,port, status_code])
-
-
-        elif(httpmethod == 'PUT'):
-            file = b""
-            recv = httpserver.put(conn, addr, entitydata, file , url, dictionary, utf_flag, status_code, [ip, active_threads, status_code])
-        elif(httpmethod == 'DELETE'):
-            glob = httpserver.delete(url, conn, entitydata, dictionary, [ip,port, status_code, active_threads])
+            tcpsocket, f_x, cget_flag, connection_status, ip, portnum, status_code, cookie_id = glob
+        elif method == 'POST':
+            glob = httpserver.POST(ent_body, tcpconnection, headers_dict, [ip,portnum, status_code])
+            ip,portnum, status_code = glob
+        elif method == 'DELETE':
+            glob = httpserver.DELETE(url, tcpconnection, ent_body, headers_dict, [ip,portnum, status_code, activethreads])
+            ip, portnum, status_code = glob
+            connection_status = False
+            tcpconnection.close()
+        elif method == 'PUT':
+            httpserver.PUT(tcpconnection, addr, ent_body, filedata, url, headers_dict, f_flag, status_code, [ip, activethreads, status_code])
         else:
-             print("No method implemented")   
+            method = 'Not Defined'
+            break
+        # use the logging formatting
+        logging.info('	{}	{}	{}	{}	{}\n'.format(addr[0], addr[1], request_line, url, status_code))
+    try:
+        tcpconnection.close()
+        activethreads.remove(tcpconnection)
+    except:
+        pass
 
-             status_handler(conn, 505 , [ ip, active_threads, status_code])
-
-        conn.close()
-        active_threads.remove(conn)
-
-
-
-
-
-
-
-                
-
-
-
-
-        
-        
-
-        
-
-
-    
-
-
-
-
-
-
-
-''' 
-Status_handler : handles status codes of the form 4xx and 5xx that lead 
-to unsuccessful actions. FInally, close the connection and remove thread from
-active threads list
-'''
-def status_handler(conn, scode, temp):
-    ip, active_threads, status_code = temp
-    status_code = scode
-    response = ''
-    if(scode == 415 or scode):
-        response += 'HTTP/1.1 {} Unsupported Media Type'.format(scode)
-    elif(scode == 404):
-        response += 'HTTP/1.1 {} Not founf'.format(scode)
-    elif(scode == 414):
-        response += 'HTTP/1.1 {} uri exceeds permissible length'.format(scode)
-    elif(scode == 503):
-        response += 'HTTP/1.1 {} server is busy ie thread limit reached'.format(scode)
-    elif(scode == 505):
-        response += 'HTTP/1.1 {} version not supported'.format(scode)    
-
-    elif(scode == 501):
-        response += 'HTTP/1.1 {} method not implemented'
-
-    response = '\r\nServer: ' + ip + '\r\n' + TODAY + '\r\n\r\n'
-    conn.send(response.encode())
-    active_threads.remove(conn) 
-    conn.close()
-    server(server_info)
-    return [ip, active_threads , scode]
-
-    
-
-
-
-
-
-    
-
-
-    
-
-
-def server(server_info):
-    tcpsocket, file_extension, connection_status, SIZE, active_threads, status_code, ip, port = server_info
+#function handling multiple requests
+def server_runner(temp):
+    tcpsocket, f_x, cget_flag, connection_status, SIZE, activethreads, status_code, ip, cookie_id, portnum = temp
     for _ in iter(int, 1):
-        conn, addr = tcpsocket.accept() # connectionsocket = request, addr = port,ip
+        tcpconnection, addr = tcpsocket.accept() # tcpconnection = request, addr = port,ip
         start = 0
-        active_threads.append(conn)  # add connections
-        if not (len(active_threads) < 20): #at a time server can handle at most 20 threads
-            temp = [ip, active_threads, status_code]
-            status_handler(conn, 503, temp)
-            conn.close() #closing the connection not the socket
+        activethreads.append(tcpconnection)  # add connections
+        if not (len(activethreads) < 20 ):
+            status_hanlder(tcpconnection, 503, [ip, activethreads, status_code])
+            tcpconnection.close()
         else:
-            reqinfo = [tcpsocket, file_extension, conn, SIZE, active_threads, status_code, ip,port]
-            new_thread = Thread(request_handler, (conn, addr, start,reqinfo ))
-            new_thread.start()
-
+            start_new_thread(request_handler, (tcpconnection, addr, start, [tcpsocket, f_x, cget_flag, connection_status, SIZE, activethreads, status_code, ip, cookie_id, portnum]))
     tcpsocket.close()
 
+def urlbreak(url):
+    u = urlparse(url)
+    url = unquote(u.path)
+    if url == '/':
+        url = os.getcwd()
+    query = parse_qs(u.query)
+    return (url, query)
+
+def last_modified(url):
+    try:
+        l = time.ctime(os.path.getmtime(url)).split(' ')
+    except OSError:
+        pass    
+
+    
+    for i in l:
+        if len(i) == 0:
+            l.remove(i)
+    l[0] = l[0] + ','
+    string = (' ').join(l)
+    string = 'Last-Modified: ' + string
+    return string    
+'''
+Function to handle the exit ( Ctrl+C and other signals )
+'''
 
 
 
 
-if __name__ =='__main__':
-    ip = '127.0.0.1'
-    status_code = 0
-    month = MONTH
-    file_type = FORMAT2
-    file_extension = FORMAT
-    connection_status = True
-    active_threads = []
+if __name__ == '__main__':
+                  
+    connection_status = True					
+                     
+    cget_flag = False    	 
+    month = { 'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, 
+        'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12 }
+
+    f_type = FORMAT2          # Dictionary to convert content types into the file extentions eg. text/html to .html
+    f_x = FORMAT      # Dictionary to convert file extentions into the content types eg. .html to text/html
+
+    activethreads = []		     
     tcpsocket = socket(AF_INET, SOCK_STREAM)
-    port = int(sys.argv[1])
-    tcpsocket.bind(('', port))
+    status_code = 0                   
+    cookie_id = 0  
+    #2021-11-09 14:49:23,449:http.py:	127.0.0.1	46552	GET /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+    logging.basicConfig(filename = os.getcwd() + '/http.log', level = logging.INFO, format = '%(asctime)s:%(filename)s:%(message)s')
+    ip = '127.0.0.1'
+    # print(ip)
+    try:
+        portnum = int(sys.argv[1])
+    except:
+        print("Port Number missing\n\nTO RUN\nType: python3 httpserver.py port_number")
+        sys.exit()
+    try:
+        tcpsocket.bind(('', portnum))
+    except:
+        print('\nformat for running:python3 httpserver.py port_number')
+        sys.exit()
     tcpsocket.listen(5)
-    server_info = [tcpsocket, file_extension,connection_status, SIZE, active_threads, status_code, ip, port]
-    server(server_info)
+    print('HTTP server running on localhost, Visit for list of files : (http://' + ip + ':' + str(portnum) + '/)')
+    temp = [tcpsocket, f_x, cget_flag, connection_status, SIZE, activethreads, status_code, ip, cookie_id, portnum]
+    server_runner(temp)            # IMP calling the main server Function
     sys.exit()
-
-
-
-
