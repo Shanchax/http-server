@@ -219,7 +219,6 @@ class http_methods:
         #query_string = parse_qs(ent_body)
         if (not(os.access(url, os.W_OK))):
             status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
-        print("No, I'm here")
 
         if os.path.isfile(url):
             fi = open(url, "a")
@@ -227,7 +226,6 @@ class http_methods:
             build_response += 'HTTP/1.1 {} OK'.format(status_code)
             fi.write(ent_body)
             fi.close()
-            print("I'm here")
         else:
             print("creating file")
             fi = open(url, "a")
@@ -690,16 +688,6 @@ def last_modified(url):
     string = (' ').join(l)
     string = 'Last-Modified: ' + string
     return string    
-'''
-Function to handle the exit ( Ctrl+C and other signals )
-'''
-sig_rec = False
-def signal_handler(sig, frame):
-    print('You pressed Ctrl+C!')
-    print("q for quit\n r for restart")
-    sys.exit(0)
-
-
 
 if __name__ == '__main__':
                   
