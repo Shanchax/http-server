@@ -5,21 +5,19 @@ from datetime import date
 TODAY = date.today()
 
 '''Max buffer size to accept from a client'''
-SIZE = 8192 # 8*1024 = 8MB
+# 8*1024 = 8MB
 
-'''Gets the Current Working directory (.)'''
+
 ROOT = os.getcwd()
 
 #dictionary to convert month to its decimal
-MONTH = { 'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, 
-        'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12 }
 
 ''' 
 fav icon which is displayed in title bar of the browser is requested by client
 so we define the path of favicon.ico here
 '''
-favicon = '/images/favicon.ico'
-FAVICON = ROOT + favicon # to get absolute path
+#favicon = '/images/favicon.ico'
+#FAVICON = ROOT + favicon # to get absolute path
 
 '''
 only HTTP version no. 1.1 is supported for this server.
@@ -78,7 +76,7 @@ w.close()
 '''
 all the files which are deleted using DELETE are getting moved here.
 '''
-DELETE = ROOT + '/deleted'
+DELETE = ROOT + '/DELETE'
 '''
 the /deleted folder mentioned above is created here.
 For the DELETE req purpose
@@ -91,9 +89,9 @@ except:
 '''
 username and password for approval of delete request method
 '''
-USERNAME = 'http' # delete can only be done after checking Auth
-PASSWORD = 'sudo' # Keep this secret folks
-MAX_REQUEST = 20
+USERNAME = 'shan' # delete can only be done after checking Auth
+PASSWORD = '3096' # Keep this secret folks
+MAX_THREADS = 20
 
 
 '''

@@ -1,0 +1,186 @@
+2021-11-12 12:19:59,291:httpfinal.py:	127.0.0.1	46640	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 12:23:25,689:httpfinal.py:	127.0.0.1	46678	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 12:25:40,263:httpfinal.py:	127.0.0.1	54358	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 12:28:06,769:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 9999)>	505
+
+2021-11-12 12:42:21,277:httpfinal.py:	127.0.0.1	42600	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 12:43:31,811:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 4321)>	505
+
+2021-11-12 13:58:24,005:httpfinal.py:	127.0.0.1	52188	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 13:58:24,110:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 52190)>	404
+
+2021-11-12 14:00:09,103:httpfinal.py:	127.0.0.1	52212	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 14:39:14,645:httpfinal.py:	127.0.0.1	52996	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 14:40:16,640:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232)>	505
+
+2021-11-12 14:43:27,591:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 53452)>	403
+
+2021-11-12 14:54:26,694:httpfinal.py:	127.0.0.1	53712	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 14:55:42,818:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232)>	505
+
+2021-11-12 15:09:17,247:httpfinal.py:	127.0.0.1	54030	GET /home/shantanu/http-server/server.log HTTP/1.1	/home/shantanu/http-server/server.log	200
+
+2021-11-12 15:09:25,107:httpfinal.py:	127.0.0.1	54030	HEAD /home/shantanu/http-server/server.log HTTP/1.1	/home/shantanu/http-server/server.log	200
+
+2021-11-12 15:09:47,502:httpfinal.py:	127.0.0.1	54030	PUT /home/shantanu/http-server/server.log HTTP/1.1	/home/shantanu/http-server/server.log	200
+
+2021-11-12 15:10:11,163:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 54034)>	403
+
+2021-11-12 15:10:21,452:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 54038)>	403
+
+2021-11-12 15:15:13,864:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 54072)>	403
+
+2021-11-12 15:17:40,906:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 54090)>	403
+
+2021-11-12 15:19:28,001:httpfinal.py:	127.0.0.1	54170	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 15:19:49,651:httpfinal.py:	127.0.0.1	54176	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	401
+
+2021-11-12 15:20:36,793:httpfinal.py:	127.0.0.1	54188	DELETE /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	401
+
+2021-11-12 15:21:55,129:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232)>	505
+
+2021-11-12 15:27:55,590:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 3232), raddr=('127.0.0.1', 54238)>	403
+
+2021-11-12 15:30:45,648:httpfinal.py:	127.0.0.1	54264	DELETE /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	401
+
+2021-11-12 15:31:15,710:httpfinal.py:	127.0.0.1	54274	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	401
+
+2021-11-12 15:34:30,208:httpfinal.py:	127.0.0.1	54296	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	401
+
+2021-11-12 15:34:44,159:httpfinal.py:	127.0.0.1	43992	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 15:34:44,253:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2323), raddr=('127.0.0.1', 43994)>	400
+
+2021-11-12 15:34:53,102:httpfinal.py:	127.0.0.1	44000	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	405
+
+2021-11-12 15:35:54,665:httpfinal.py:	127.0.0.1	44004	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	405
+
+2021-11-12 15:36:13,671:httpfinal.py:	127.0.0.1	44006	DELETE /methods.py HTTP/1.1	/methods.py	405
+
+2021-11-12 15:36:42,357:httpfinal.py:	127.0.0.1	44008	DELETE /methods.py HTTP/1.1	/methods.py	405
+
+2021-11-12 15:44:59,125:httpfinal.py:	127.0.0.1	44064	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 15:44:59,209:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2323), raddr=('127.0.0.1', 44066)>	400
+
+2021-11-12 15:45:12,184:httpfinal.py:	127.0.0.1	44076	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	405
+
+2021-11-12 15:45:14,212:httpfinal.py:	127.0.0.1	44078	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	405
+
+2021-11-12 15:46:31,126:httpfinal.py:	127.0.0.1	44086	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 15:46:31,200:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2323), raddr=('127.0.0.1', 44088)>	400
+
+2021-11-12 15:46:35,421:httpfinal.py:	127.0.0.1	44090	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	405
+
+2021-11-12 15:47:40,518:httpfinal.py:	127.0.0.1	37902	DELETE /home/shantanu/http-server/%20methods.py HTTP/1.1	/home/shantanu/http-server/ methods.py	400
+
+2021-11-12 15:48:10,565:httpfinal.py:	127.0.0.1	37906	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	200
+
+2021-11-12 16:32:01,797:httpfinal.py:	127.0.0.1	44452	GET /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-12 16:32:07,195:httpfinal.py:	127.0.0.1	44452	HEAD /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-12 16:32:20,029:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 2323), raddr=('127.0.0.1', 44452)>	403
+
+2021-11-12 16:32:49,651:httpfinal.py:	127.0.0.1	44458	DELETE /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-12 16:42:48,702:httpfinal.py:	127.0.0.1	44878	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 16:43:49,878:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44896)>	403
+
+2021-11-12 16:43:59,782:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-12 16:50:01,181:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 45360)>	403
+
+2021-11-12 16:50:23,004:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 45368)>	403
+
+2021-11-12 16:55:20,995:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 4444), raddr=('127.0.0.1', 39212)>	403
+
+2021-11-12 16:55:34,577:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 4444), raddr=('127.0.0.1', 39216)>	403
+
+2021-11-12 17:00:32,671:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5555), raddr=('127.0.0.1', 58442)>	403
+
+2021-11-12 17:03:46,693:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5555), raddr=('127.0.0.1', 58506)>	403
+
+2021-11-12 17:09:13,227:httpfinal.py:	127.0.0.1	37306	POST / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 17:11:53,904:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 47976)>	403
+
+2021-11-12 17:13:23,910:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 47990)>	403
+
+2021-11-12 17:14:54,765:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 48002)>	403
+
+2021-11-12 17:48:27,207:httpfinal.py:	127.0.0.1	48622	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 17:48:27,322:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 48624)>	400
+
+2021-11-12 21:48:31,567:httpfinal.py:	127.0.0.1	50968	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 21:48:31,657:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 50970)>	400
+
+2021-11-12 22:47:21,859:httpfinal.py:	127.0.0.1	51268	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-12 22:47:21,926:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 51270)>	400
+
+2021-11-12 22:47:56,475:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 51284)>	403
+
+2021-11-12 22:48:12,739:httpfinal.py:	127.0.0.1	51288	GET /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-12 22:48:31,897:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454)>	505
+
+2021-11-13 08:47:02,968:httpfinal.py:	127.0.0.1	51426	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 08:47:03,039:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 51428)>	400
+
+2021-11-13 08:47:09,580:httpfinal.py:	127.0.0.1	51434	GET /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-13 08:47:21,653:httpfinal.py:	127.0.0.1	51434	DELETE /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-13 08:47:30,237:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 51444)>	403
+
+2021-11-13 09:17:41,384:httpfinal.py:	127.0.0.1	51598	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 09:17:41,469:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5454), raddr=('127.0.0.1', 51600)>	400
+
+2021-11-13 09:18:00,715:httpfinal.py:	127.0.0.1	40960	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 09:18:00,805:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 4545), raddr=('127.0.0.1', 40962)>	400
+
+2021-11-13 09:43:35,486:httpfinal.py:	127.0.0.1	41564	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 10:04:33,859:httpfinal.py:	127.0.0.1	42128	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 10:11:00,922:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 4545), raddr=('127.0.0.1', 42222)>	400
+
+2021-11-13 10:11:25,963:httpfinal.py:	127.0.0.1	42226	GET /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-13 10:22:28,385:httpfinal.py:	127.0.0.1	35846	GET /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-13 10:22:35,742:httpfinal.py:	127.0.0.1	35846	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-13 10:22:42,004:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 9999), raddr=('127.0.0.1', 35852)>	400
+
+2021-11-13 10:22:57,579:httpfinal.py:	127.0.0.1	35856	HEAD /home/shantanu/http-server/workfile.html HTTP/1.1	/home/shantanu/http-server/workfile.html	200
+
+2021-11-13 10:23:07,277:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 9999), raddr=('127.0.0.1', 35856)>	403
+
+2021-11-13 10:30:43,041:httpfinal.py:	127.0.0.1	35990	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 10:31:44,135:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 9999)>	505
+
+2021-11-13 10:43:53,678:httpfinal.py:	127.0.0.1	36112	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-13 10:45:01,797:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 9999)>	505
+
+2021-11-13 12:08:54,358:httpfinal.py:	127.0.0.1	36890	PUT /home/shantanu/http-server/server.log HTTP/1.1	/home/shantanu/http-server/server.log	0
+
