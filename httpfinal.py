@@ -132,7 +132,7 @@ class http_methods:
 
             elif header == 'Accept-Encoding':
                 convo = accept_enc(headers_dict[header])
-                print(convo)
+                #print(convo)
                 build_response += 'Content-Encoding:' + convo
                 
             else:
@@ -204,7 +204,7 @@ class http_methods:
             build_response += '\r\n\r\n'
             if cget_flag == False and method == 'GET':
                 encoded = build_response.encode()
-                print(encoded)
+                #print(encoded)
                 tcpconnection.send(encoded)
                 tcpconnection.sendfile(f)
             elif cget_flag == False and method == 'HEAD':
@@ -235,7 +235,7 @@ class http_methods:
             fi.write(ent_body)
             fi.close()
         else:
-            print("creating file")
+            #print("creating file")
             fi = open(url, "a")
             status_code = 201
             build_response += 'HTTP/1.1 {} Created'.format(status_code)
@@ -250,7 +250,7 @@ class http_methods:
         size = os.path.getsize(NEWFILE)
         build_response += '\r\nContent-Language: en-US,en' + '\r\nContent-Type: text/html'+ '\r\n' + 'Content-Length: ' + str(size) + '\r\n' + last_modified(url) + '\r\n\r\n'
         response = build_response.encode()
-        print(build_response)
+        #print(build_response)
         tcpconnection.send(response)
         tcpconnection.sendfile(f)
         return [ip, portnum, status_code]
@@ -402,7 +402,7 @@ class http_methods:
         ip, portnum,status_code, activethreads = arg_list
         isItDir = os.path.isdir(url)
         isItFile = os.path.isfile(url)
-        print(f"deleting {url} ")
+        #print(f"deleting {url} ")
         # print(isItFile)
         options= url.split('/')
         build_response = ''
@@ -560,7 +560,7 @@ def request_handler(tcpconnection, addr, start, glob):
             break
         try:
             message = tcpconnection.recv(SIZE)
-            print(message)
+            #print(message)
         except OSError:
             message = tcpconnection.recv(SIZE)
         try:
