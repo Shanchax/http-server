@@ -17,12 +17,13 @@ from config import *                    # import variables
 import signal   
 from urllib.parse import *	 # for parsing URL/URI
 import os
-import time                        # signal to handle Ctrl+C and other SIGNALS
+import time    
+import hashlib                    # signal to handle Ctrl+C and other SIGNALS
 
 SIZE = 8192 
 
 class http_methods:
-
+    
     def GET_HEAD(self,tcpconnection, url, headers_dict, query, method, arg_list):
         tcpsocket, f_x, cget_flag, connection_status, ip, portnum, status_code, cookie_id, activethreads = arg_list
         isItFile = os.path.isfile(url)
@@ -63,7 +64,8 @@ class http_methods:
                     dir_list.remove(i)
                 else:
                     pass
-        
+ 
+
         build_response += '\r\n' + 'Set-Cookie: id=' + str(cookie_id) + MAXLIFE
         cookie_id += random.randint(1,10)
         for header in headers_dict:
@@ -128,13 +130,16 @@ class http_methods:
                 build_response += req_temp
             
 
-            # elif header == 'Accept-Encoding':
-            #     convo = accept_enc(headers_dict[header])
-            #     print(convo)
-            #     build_response += 'Content-Encoding:' + convo
+            elif header == 'Accept-Encoding':
+                convo = accept_enc(headers_dict[header])
+                print(convo)
+                build_response += 'Content-Encoding:' + convo
                 
             else:
                 continue
+        
+
+
 
         if isItDir and method == 'GET':
             build_response += '\r\n\r\n'
@@ -217,6 +222,9 @@ class http_methods:
         build_response = ''
         url = os.getcwd() + '/post.txt'
         #query_string = parse_qs(ent_body)
+
+        # Etag = '{}'.format(hashlib.md5((date(last_modified(url))).encode()).hexdigest()) 
+        # build_response += '\r\n' + 'Etag : ' + Etag
         if (not(os.access(url, os.W_OK))):
             status_hanlder(tcpconnection, 403, [ip, activethreads, status_code])
 
@@ -503,26 +511,26 @@ def status_hanlder(tcpconnection, code, arg_list):
     return [ip, activethreads, status_code]
 
 
-# def accept_enc(state):
+def accept_enc(state):
     
-#     content_enc = ''
-#     maxq = 0.0
+    content_enc = ''
+    maxq = 0.0
     
-#     if(state == ""):
-#         return 'Identity'
-#     temp_list = state.split(',')
-#     if(len(temp_list)== 1):
+    if(state == ""):
+        return 'Identity'
+    temp_list = state.split(',')
+    if(len(temp_list)== 1):
 
-#         return temp_list.split(';')[0]
+        return temp_list.split(';')[0]
     
-#     for element in temp_list:
-#         temp1 = element.split(';')
-#         tempq = float(temp1[1].split('=')[1])
-#         if(maxq < tempq):
-#             content_enc = temp1[0]
-#             maxq = tempq
+    for element in temp_list:
+        temp1 = element.split(';')
+        tempq = float(temp1[1].split('=')[1])
+        if(maxq < tempq):
+            content_enc = temp1[0]
+            maxq = tempq
 
-#     return content_enc
+    return content_enc
         
 #function for conditional get implementation
 def status_304(tcpconnection, url, arg_list):
@@ -724,3 +732,10 @@ if __name__ == '__main__':
     temp = [tcpsocket, f_x, cget_flag, connection_status, SIZE, activethreads, status_code, ip, cookie_id, portnum]
     server_runner(temp)            # IMP calling the main server Function
     sys.exit()
+
+
+
+
+
+
+

@@ -4,54 +4,19 @@ from datetime import date
 
 TODAY = date.today()
 
-'''Max buffer size to accept from a client'''
-# 8*1024 = 8MB
 
 
 ROOT = os.getcwd()
 
-#dictionary to convert month to its decimal
 
-''' 
-fav icon which is displayed in title bar of the browser is requested by client
-so we define the path of favicon.ico here
-'''
-#favicon = '/images/favicon.ico'
-#FAVICON = ROOT + favicon # to get absolute path
-
-'''
-only HTTP version no. 1.1 is supported for this server.
-It depends on the implementation of the dev but I am only supporting 1.1
-''' 
-RUNNING_VERSION = '1.1'
-
-'''
-Number of Thread Requests handled by the server at one time
-'''
-
-
-'''
-Maximum URL length supported by the server at the time of establishing new connection
-'''
-MAX_URL = 250
-
-'''
-log file path so that we can write into it
-'''
-LOG = ROOT + '/server.log'
-w = open(LOG, "a") # using a mode so we can only append and not overrite etc bad stuff
+LOG = ROOT + '/http.log'
+w = open(LOG, "a") 
 w.close()
 
-'''
-workfile.html has the response saved msg.
-It is not part of the Server program I am using it show client that it's response is saved
-'''
-WORKFILE = ROOT + '/workfile.html' # path
 
-'''
-this creates a basic html workfile
-'''
-w = open(WORKFILE, "w")
+NEWFILE = ROOT + '/ newfile.html' # path
+
+w = open(NEWFILE, "w")
 d = '''<html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -98,10 +63,10 @@ MAX_THREADS = 20
 cookie details
 '''
 COOKIE = 'Set-Cookie: id=' # id will be given in the program
-MAXAGE = '; max-age=3600' # 3600 sec is 60min
+MAXLIFE = '; max-age=3600' # 3600 sec is 60min
 
 '''Following is the file formats supported by the server'''
-FORMAT = {
+FEXTENSION = {
 		".aac"	: "audio/aac",
 		".abw"	: "application/x-abiword",
 		".arc"	: "application/x-freearc",
@@ -177,7 +142,7 @@ FORMAT = {
 	}
     
 '''Following is the file formats supported by the server'''
-FORMAT2 = {
+FTYPE = {
 		"audio/aac"                     : ".aac"    ,
 		"application/x-abiword"         : ".abw"	,
 		"application/x-freearc"         : ".arc"	,
@@ -267,5 +232,5 @@ status_codes = {
 		505 : "HTTP version not supported",
 	}
 
-'''Methods supported by the server'''
+
 methods = ["GET", "POST", "HEAD", "PUT", "DELETE", "TRACE", "OPTIONS"]
