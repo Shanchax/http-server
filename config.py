@@ -38,9 +38,7 @@ CSVFILE = ROOT + '/output.csv'
 w = open(CSVFILE, "a") # only appending not writing
 w.close()
 
-'''
-all the files which are deleted using DELETE are getting moved here.
-'''
+
 DELETE = ROOT + '/DELETE'
 '''
 the /deleted folder mentioned above is created here.
@@ -54,8 +52,7 @@ except:
 '''
 username and password for approval of delete request method
 '''
-USERNAME = 'shan' # delete can only be done after checking Auth
-PASSWORD = '3096' # Keep this secret folks
+
 MAX_THREADS = 20
 
 
@@ -65,7 +62,6 @@ cookie details
 COOKIE = 'Set-Cookie: id=' # id will be given in the program
 MAXLIFE = '; max-age=3600' # 3600 sec is 60min
 
-'''Following is the file formats supported by the server'''
 FEXTENSION = {
 		".aac"	: "audio/aac",
 		".abw"	: "application/x-abiword",
@@ -141,7 +137,7 @@ FEXTENSION = {
 		".7z"	: "application/x-7z-compressed",
 	}
     
-'''Following is the file formats supported by the server'''
+
 FTYPE = {
 		"audio/aac"                     : ".aac"    ,
 		"application/x-abiword"         : ".abw"	,

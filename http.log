@@ -390,3 +390,19 @@
 
 2021-11-14 18:36:12,592:httpfinal.py:	127.0.0.1	45050	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	200
 
+2021-11-14 18:52:48,118:httpfinal.py:	127.0.0.1	45326	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 18:52:48,121:httpfinal.py:	127.0.0.1	45328	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 18:52:48,122:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 18:52:48,124:httpfinal.py:	127.0.0.1	45330	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 18:52:48,125:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 18:52:48,129:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 45332)>	403
+
+2021-11-14 18:52:48,134:httpfinal.py:	127.0.0.1	45334	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	0
+
+2021-11-14 18:52:48,139:httpfinal.py:	127.0.0.1	45336	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	200
+
