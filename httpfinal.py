@@ -277,7 +277,7 @@ class http_methods:
             #ent_body = tcpconnection.recv(SIZE)
         try:
             filedata = filedata + ent_body
-            print("heyzzaa")
+            
                 
         except TypeError:
             ent_body = ent_body.encode()

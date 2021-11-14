@@ -164,6 +164,10 @@ class test_06(unittest.TestCase):
             return
 
 
+
+
 if __name__ == "__main__":
     
+
+    n_clientThreads = 4
     unittest.main()

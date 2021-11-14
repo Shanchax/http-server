@@ -406,3 +406,651 @@
 
 2021-11-14 18:52:48,139:httpfinal.py:	127.0.0.1	45336	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	200
 
+2021-11-14 20:41:42,990:httpfinal.py:	127.0.0.1	45936	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 20:41:42,994:httpfinal.py:	127.0.0.1	45938	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 20:41:42,994:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 20:41:42,997:httpfinal.py:	127.0.0.1	45940	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 20:41:42,998:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 20:41:43,001:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 45942)>	403
+
+2021-11-14 20:41:43,005:httpfinal.py:	127.0.0.1	45944	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	505
+
+2021-11-14 20:41:43,009:httpfinal.py:	127.0.0.1	45946	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:07:41,744:httpfinal.py:	127.0.0.1	46080	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:07:41,747:httpfinal.py:	127.0.0.1	46082	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:07:41,748:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:07:41,750:httpfinal.py:	127.0.0.1	46084	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:07:41,751:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:07:41,753:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46086)>	403
+
+2021-11-14 21:07:41,756:httpfinal.py:	127.0.0.1	46088	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	505
+
+2021-11-14 21:07:41,761:httpfinal.py:	127.0.0.1	46090	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:07:41,770:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46092)>	403
+
+2021-11-14 21:07:41,770:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46094)>	403
+
+2021-11-14 21:07:41,774:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46096)>	403
+
+2021-11-14 21:07:41,782:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46098)>	403
+
+2021-11-14 21:07:41,782:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46100)>	403
+
+2021-11-14 21:07:41,791:httpfinal.py:	<socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46104)>	403
+
+2021-11-14 21:07:41,793:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46102)>	403
+
+2021-11-14 21:07:41,795:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46106)>	403
+
+2021-11-14 21:07:41,798:httpfinal.py:	<socket.socket fd=15, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46108)>	403
+
+2021-11-14 21:07:41,801:httpfinal.py:	<socket.socket fd=15, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46110)>	403
+
+2021-11-14 21:07:41,803:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46112)>	403
+
+2021-11-14 21:07:41,809:httpfinal.py:	<socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46114)>	403
+
+2021-11-14 21:07:41,813:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46116)>	403
+
+2021-11-14 21:07:41,815:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46118)>	403
+
+2021-11-14 21:07:41,822:httpfinal.py:	<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46120)>	403
+
+2021-11-14 21:07:41,822:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46122)>	403
+
+2021-11-14 21:07:41,829:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46124)>	403
+
+2021-11-14 21:07:41,831:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46126)>	403
+
+2021-11-14 21:07:41,835:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46128)>	403
+
+2021-11-14 21:07:41,837:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46130)>	403
+
+2021-11-14 21:08:50,671:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46144)>	403
+
+2021-11-14 21:08:50,671:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46146)>	403
+
+2021-11-14 21:08:50,671:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46148)>	403
+
+2021-11-14 21:08:50,674:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46152)>	403
+
+2021-11-14 21:08:50,674:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46150)>	403
+
+2021-11-14 21:08:50,678:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46154)>	403
+
+2021-11-14 21:08:50,679:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46156)>	403
+
+2021-11-14 21:08:50,679:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46158)>	403
+
+2021-11-14 21:08:50,680:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46160)>	403
+
+2021-11-14 21:08:50,684:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46164)>	403
+
+2021-11-14 21:08:50,685:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46162)>	403
+
+2021-11-14 21:08:50,686:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46166)>	403
+
+2021-11-14 21:08:50,688:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46168)>	403
+
+2021-11-14 21:08:50,689:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46170)>	403
+
+2021-11-14 21:08:50,690:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46172)>	403
+
+2021-11-14 21:08:50,692:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46174)>	403
+
+2021-11-14 21:08:50,692:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46176)>	403
+
+2021-11-14 21:08:50,694:httpfinal.py:	<socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46178)>	403
+
+2021-11-14 21:08:50,697:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46180)>	403
+
+2021-11-14 21:08:50,697:httpfinal.py:	<socket.socket fd=15, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46182)>	403
+
+2021-11-14 21:09:38,482:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46188)>	403
+
+2021-11-14 21:09:38,482:httpfinal.py:	<socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46190)>	403
+
+2021-11-14 21:09:38,484:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46192)>	403
+
+2021-11-14 21:09:38,484:httpfinal.py:	<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46194)>	403
+
+2021-11-14 21:09:38,486:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46196)>	403
+
+2021-11-14 21:09:59,094:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46206)>	403
+
+2021-11-14 21:09:59,094:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46208)>	403
+
+2021-11-14 21:09:59,096:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46204)>	403
+
+2021-11-14 21:09:59,097:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46210)>	403
+
+2021-11-14 21:09:59,098:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46212)>	403
+
+2021-11-14 21:10:39,258:httpfinal.py:	127.0.0.1	46234	POST /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-14 21:10:39,259:httpfinal.py:	127.0.0.1	46230	POST /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-14 21:10:39,259:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46234)>	505
+
+2021-11-14 21:10:39,259:httpfinal.py:	127.0.0.1	46232	POST /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-14 21:10:39,259:httpfinal.py:	<socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46230)>	505
+
+2021-11-14 21:10:39,259:httpfinal.py:	127.0.0.1	46236	POST /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-14 21:10:39,260:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46232)>	505
+
+2021-11-14 21:10:39,260:httpfinal.py:	<socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46236)>	505
+
+2021-11-14 21:10:39,260:httpfinal.py:	127.0.0.1	46238	POST /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	200
+
+2021-11-14 21:10:39,261:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46238)>	505
+
+2021-11-14 21:10:57,321:httpfinal.py:	127.0.0.1	46250	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:10:57,322:httpfinal.py:	127.0.0.1	46252	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:10:57,322:httpfinal.py:	127.0.0.1	46254	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:10:57,324:httpfinal.py:	127.0.0.1	46258	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:10:57,325:httpfinal.py:	127.0.0.1	46256	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:11:35,774:httpfinal.py:	127.0.0.1	46266	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:11:35,776:httpfinal.py:	127.0.0.1	46268	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:11:35,777:httpfinal.py:	<socket.socket fd=26, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:11:35,779:httpfinal.py:	127.0.0.1	46270	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:11:35,779:httpfinal.py:	<socket.socket fd=27, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:11:35,781:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46272)>	403
+
+2021-11-14 21:11:35,783:httpfinal.py:	127.0.0.1	46274	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	403
+
+2021-11-14 21:11:35,785:httpfinal.py:	127.0.0.1	46276	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	200
+
+2021-11-14 21:11:35,788:httpfinal.py:	127.0.0.1	46278	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:11:35,788:httpfinal.py:	127.0.0.1	46280	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:11:35,791:httpfinal.py:	127.0.0.1	46282	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:11:35,794:httpfinal.py:	127.0.0.1	46286	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:11:35,795:httpfinal.py:	127.0.0.1	46284	DELETE /home/shantanu/http-server/put.txt HTTP/1.1	/home/shantanu/http-server/put.txt	400
+
+2021-11-14 21:15:24,961:httpfinal.py:	127.0.0.1	46320	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:15:24,963:httpfinal.py:	127.0.0.1	46322	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:15:24,964:httpfinal.py:	<socket.socket fd=32, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:15:24,965:httpfinal.py:	127.0.0.1	46324	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:15:24,966:httpfinal.py:	<socket.socket fd=33, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:15:24,967:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46326)>	403
+
+2021-11-14 21:15:24,969:httpfinal.py:	127.0.0.1	46328	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	403
+
+2021-11-14 21:15:24,971:httpfinal.py:	127.0.0.1	46330	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:15:24,977:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46332)>	403
+
+2021-11-14 21:15:24,979:httpfinal.py:	<socket.socket fd=35, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46334)>	403
+
+2021-11-14 21:15:24,980:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46336)>	403
+
+2021-11-14 21:15:24,981:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46338)>	403
+
+2021-11-14 21:15:24,983:httpfinal.py:	<socket.socket fd=36, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46340)>	403
+
+2021-11-14 21:16:15,613:httpfinal.py:	127.0.0.1	46352	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:16:15,615:httpfinal.py:	127.0.0.1	46354	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:16:15,616:httpfinal.py:	<socket.socket fd=38, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:16:15,618:httpfinal.py:	127.0.0.1	46356	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:16:15,618:httpfinal.py:	<socket.socket fd=39, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:16:15,619:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46358)>	403
+
+2021-11-14 21:16:15,622:httpfinal.py:	127.0.0.1	46360	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	505
+
+2021-11-14 21:16:15,624:httpfinal.py:	127.0.0.1	46362	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:16:15,629:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46364)>	403
+
+2021-11-14 21:16:15,631:httpfinal.py:	<socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46366)>	403
+
+2021-11-14 21:16:15,632:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46368)>	403
+
+2021-11-14 21:16:15,633:httpfinal.py:	<socket.socket fd=41, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46370)>	403
+
+2021-11-14 21:16:15,635:httpfinal.py:	<socket.socket fd=42, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46372)>	403
+
+2021-11-14 21:16:55,387:httpfinal.py:	127.0.0.1	46380	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:16:55,389:httpfinal.py:	127.0.0.1	46382	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:16:55,390:httpfinal.py:	<socket.socket fd=23, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:16:55,392:httpfinal.py:	127.0.0.1	46384	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:16:55,392:httpfinal.py:	<socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:16:55,394:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46386)>	403
+
+2021-11-14 21:16:55,397:httpfinal.py:	127.0.0.1	46388	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	403
+
+2021-11-14 21:16:55,400:httpfinal.py:	127.0.0.1	46390	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:16:55,403:httpfinal.py:	<socket.socket fd=26, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46392)>	403
+
+2021-11-14 21:16:55,403:httpfinal.py:	<socket.socket fd=27, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46394)>	403
+
+2021-11-14 21:17:11,039:httpfinal.py:	127.0.0.1	46402	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:17:11,041:httpfinal.py:	127.0.0.1	46404	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:17:11,042:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:17:11,043:httpfinal.py:	127.0.0.1	46406	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:17:11,044:httpfinal.py:	<socket.socket fd=44, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:17:11,047:httpfinal.py:	<socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46408)>	403
+
+2021-11-14 21:17:11,049:httpfinal.py:	127.0.0.1	46410	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	403
+
+2021-11-14 21:17:11,051:httpfinal.py:	127.0.0.1	46412	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:17:11,054:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46414)>	403
+
+2021-11-14 21:17:11,056:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46416)>	403
+
+2021-11-14 21:17:11,056:httpfinal.py:	<socket.socket fd=29, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46418)>	403
+
+2021-11-14 21:17:22,571:httpfinal.py:	127.0.0.1	46422	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:17:22,573:httpfinal.py:	127.0.0.1	46424	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:17:22,574:httpfinal.py:	<socket.socket fd=30, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:17:22,575:httpfinal.py:	127.0.0.1	46426	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:17:22,576:httpfinal.py:	<socket.socket fd=31, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:17:22,577:httpfinal.py:	<socket.socket fd=32, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46428)>	403
+
+2021-11-14 21:17:22,579:httpfinal.py:	127.0.0.1	46430	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	505
+
+2021-11-14 21:17:22,581:httpfinal.py:	127.0.0.1	46432	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:17:22,585:httpfinal.py:	<socket.socket fd=47, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46436)>	403
+
+2021-11-14 21:17:22,585:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46434)>	403
+
+2021-11-14 21:19:12,088:httpfinal.py:	127.0.0.1	46478	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:19:12,091:httpfinal.py:	127.0.0.1	46480	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:19:12,091:httpfinal.py:	<socket.socket fd=34, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:19:12,093:httpfinal.py:	127.0.0.1	46482	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:19:12,093:httpfinal.py:	<socket.socket fd=48, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:19:12,095:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46484)>	403
+
+2021-11-14 21:19:12,096:httpfinal.py:	127.0.0.1	46486	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	403
+
+2021-11-14 21:19:12,099:httpfinal.py:	127.0.0.1	46488	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 21:19:12,103:httpfinal.py:	<socket.socket fd=50, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46490)>	403
+
+2021-11-14 21:19:12,104:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46492)>	403
+
+2021-11-14 21:19:17,575:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46494)>	403
+
+2021-11-14 21:19:17,576:httpfinal.py:	<socket.socket fd=51, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46496)>	403
+
+2021-11-14 21:19:25,519:httpfinal.py:	<socket.socket fd=36, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46498)>	403
+
+2021-11-14 21:19:25,519:httpfinal.py:	<socket.socket fd=52, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46500)>	403
+
+2021-11-14 21:19:25,519:httpfinal.py:	<socket.socket fd=37, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46502)>	403
+
+2021-11-14 21:19:42,911:httpfinal.py:	<socket.socket fd=38, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46510)>	403
+
+2021-11-14 21:19:42,913:httpfinal.py:	<socket.socket fd=53, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46512)>	403
+
+2021-11-14 21:19:42,913:httpfinal.py:	<socket.socket fd=39, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46514)>	403
+
+2021-11-14 21:19:42,915:httpfinal.py:	<socket.socket fd=54, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46516)>	403
+
+2021-11-14 21:28:55,194:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46638)>	403
+
+2021-11-14 21:28:55,197:httpfinal.py:	<socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46642)>	403
+
+2021-11-14 21:28:55,198:httpfinal.py:	<socket.socket fd=55, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46640)>	403
+
+2021-11-14 21:28:55,201:httpfinal.py:	<socket.socket fd=40, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46644)>	403
+
+2021-11-14 21:29:03,741:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46648)>	403
+
+2021-11-14 21:29:03,743:httpfinal.py:	<socket.socket fd=56, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46650)>	403
+
+2021-11-14 21:29:03,745:httpfinal.py:	<socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46654)>	403
+
+2021-11-14 21:29:03,746:httpfinal.py:	<socket.socket fd=57, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46652)>	403
+
+2021-11-14 21:29:13,636:httpfinal.py:	<socket.socket fd=58, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46656)>	403
+
+2021-11-14 21:29:13,638:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46658)>	403
+
+2021-11-14 21:35:57,709:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46818)>	403
+
+2021-11-14 21:35:57,709:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46820)>	403
+
+2021-11-14 21:43:47,630:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46862)>	403
+
+2021-11-14 21:43:47,630:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46866)>	403
+
+2021-11-14 21:43:47,631:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46864)>	403
+
+2021-11-14 21:43:47,633:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46868)>	403
+
+2021-11-14 21:43:47,634:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46870)>	403
+
+2021-11-14 21:43:47,635:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46872)>	403
+
+2021-11-14 21:44:10,903:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46880)>	403
+
+2021-11-14 21:44:10,904:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46884)>	403
+
+2021-11-14 21:44:10,906:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46882)>	403
+
+2021-11-14 21:44:10,906:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46886)>	403
+
+2021-11-14 21:44:10,908:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46888)>	403
+
+2021-11-14 21:44:10,908:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46890)>	403
+
+2021-11-14 21:44:10,913:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46892)>	403
+
+2021-11-14 21:44:10,914:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46896)>	403
+
+2021-11-14 21:44:10,915:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46894)>	403
+
+2021-11-14 21:44:10,918:httpfinal.py:	<socket.socket fd=15, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46902)>	403
+
+2021-11-14 21:44:10,918:httpfinal.py:	<socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46898)>	403
+
+2021-11-14 21:44:10,918:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46900)>	403
+
+2021-11-14 21:44:10,920:httpfinal.py:	<socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46904)>	403
+
+2021-11-14 21:44:10,922:httpfinal.py:	<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46906)>	403
+
+2021-11-14 21:44:10,925:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46908)>	403
+
+2021-11-14 21:44:10,927:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46910)>	403
+
+2021-11-14 21:44:10,930:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46912)>	403
+
+2021-11-14 21:44:10,934:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46914)>	403
+
+2021-11-14 21:44:10,934:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46916)>	403
+
+2021-11-14 21:44:10,936:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46918)>	403
+
+2021-11-14 21:45:18,141:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46972)>	503
+
+2021-11-14 21:45:42,278:httpfinal.py:	<socket.socket fd=30, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46982)>	503
+
+2021-11-14 21:45:42,280:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46984)>	503
+
+2021-11-14 21:45:42,281:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46986)>	503
+
+2021-11-14 21:45:42,283:httpfinal.py:	<socket.socket fd=31, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46988)>	503
+
+2021-11-14 21:45:42,285:httpfinal.py:	<socket.socket fd=32, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46990)>	503
+
+2021-11-14 21:45:42,286:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46992)>	503
+
+2021-11-14 21:45:42,288:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46994)>	503
+
+2021-11-14 21:45:42,289:httpfinal.py:	<socket.socket fd=33, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46996)>	503
+
+2021-11-14 21:45:42,291:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46998)>	503
+
+2021-11-14 21:45:42,293:httpfinal.py:	<socket.socket fd=34, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47000)>	503
+
+2021-11-14 21:46:56,656:httpfinal.py:	<socket.socket fd=35, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47010)>	503
+
+2021-11-14 21:46:56,658:httpfinal.py:	<socket.socket fd=37, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47012)>	503
+
+2021-11-14 21:46:56,660:httpfinal.py:	<socket.socket fd=36, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47014)>	503
+
+2021-11-14 21:46:56,661:httpfinal.py:	<socket.socket fd=38, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47016)>	503
+
+2021-11-14 21:46:56,663:httpfinal.py:	<socket.socket fd=39, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47018)>	503
+
+2021-11-14 21:46:56,665:httpfinal.py:	<socket.socket fd=40, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47020)>	503
+
+2021-11-14 21:46:56,668:httpfinal.py:	<socket.socket fd=41, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47022)>	503
+
+2021-11-14 21:46:56,668:httpfinal.py:	<socket.socket fd=42, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47024)>	503
+
+2021-11-14 21:46:56,671:httpfinal.py:	<socket.socket fd=43, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47028)>	503
+
+2021-11-14 21:46:56,671:httpfinal.py:	<socket.socket fd=44, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47026)>	503
+
+2021-11-14 21:47:53,204:httpfinal.py:	127.0.0.1	47034	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 21:47:53,207:httpfinal.py:	127.0.0.1	47036	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 21:47:53,207:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:47:53,208:httpfinal.py:	127.0.0.1	47038	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 21:47:53,209:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 21:47:53,211:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47040)>	403
+
+2021-11-14 21:47:53,214:httpfinal.py:	127.0.0.1	47042	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	0
+
+2021-11-14 21:47:53,217:httpfinal.py:	127.0.0.1	47044	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	200
+
+2021-11-14 21:55:40,149:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47198)>	403
+
+2021-11-14 22:00:25,907:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47240)>	403
+
+2021-11-14 22:00:25,907:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47242)>	403
+
+2021-11-14 22:00:25,907:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47244)>	403
+
+2021-11-14 22:01:49,578:httpfinal.py:	127.0.0.1	47256	GET / HTTP/1.1	/home/shantanu/http-server	200
+
+2021-11-14 22:01:49,580:httpfinal.py:	127.0.0.1	47258	HEAD /home/shantanu/http-server/http.log HTTP/1.1	/home/shantanu/http-server/http.log	200
+
+2021-11-14 22:01:49,580:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:01:49,582:httpfinal.py:	127.0.0.1	47260	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:01:49,582:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:01:49,584:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47262)>	403
+
+2021-11-14 22:01:49,586:httpfinal.py:	127.0.0.1	47264	PUT /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	505
+
+2021-11-14 22:01:49,588:httpfinal.py:	127.0.0.1	47266	DELETE /home/shantanu/http-server/output.csv HTTP/1.1	/home/shantanu/http-server/output.csv	400
+
+2021-11-14 22:04:36,321:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47274)>	403
+
+2021-11-14 22:04:36,321:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47278)>	403
+
+2021-11-14 22:04:36,322:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47276)>	403
+
+2021-11-14 22:06:20,398:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47302)>	400
+
+2021-11-14 22:06:20,398:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47300)>	400
+
+2021-11-14 22:06:20,399:httpfinal.py:	<socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47304)>	400
+
+2021-11-14 22:06:35,334:httpfinal.py:	<socket.socket fd=15, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47314)>	403
+
+2021-11-14 22:06:35,334:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47316)>	403
+
+2021-11-14 22:06:35,334:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47312)>	403
+
+2021-11-14 22:06:35,338:httpfinal.py:	<socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47318)>	400
+
+2021-11-14 22:06:35,339:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47320)>	400
+
+2021-11-14 22:06:35,340:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47322)>	400
+
+2021-11-14 22:06:39,727:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47326)>	403
+
+2021-11-14 22:06:39,727:httpfinal.py:	<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47324)>	403
+
+2021-11-14 22:06:39,727:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47328)>	403
+
+2021-11-14 22:06:39,730:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47330)>	400
+
+2021-11-14 22:06:39,730:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47332)>	400
+
+2021-11-14 22:06:39,731:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47334)>	400
+
+2021-11-14 22:06:41,021:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47336)>	403
+
+2021-11-14 22:06:41,022:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47338)>	403
+
+2021-11-14 22:06:41,022:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47340)>	403
+
+2021-11-14 22:06:41,026:httpfinal.py:	<socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47344)>	400
+
+2021-11-14 22:06:41,026:httpfinal.py:	<socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47342)>	400
+
+2021-11-14 22:06:41,027:httpfinal.py:	<socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47346)>	400
+
+2021-11-14 22:06:41,962:httpfinal.py:	<socket.socket fd=23, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47348)>	403
+
+2021-11-14 22:06:41,964:httpfinal.py:	<socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47352)>	403
+
+2021-11-14 22:06:41,964:httpfinal.py:	<socket.socket fd=15, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47350)>	403
+
+2021-11-14 22:06:41,969:httpfinal.py:	<socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47354)>	400
+
+2021-11-14 22:06:41,969:httpfinal.py:	<socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47356)>	400
+
+2021-11-14 22:06:41,969:httpfinal.py:	<socket.socket fd=25, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47358)>	400
+
+2021-11-14 22:06:43,279:httpfinal.py:	<socket.socket fd=26, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47360)>	403
+
+2021-11-14 22:06:43,281:httpfinal.py:	<socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47364)>	403
+
+2021-11-14 22:06:43,281:httpfinal.py:	<socket.socket fd=27, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47362)>	403
+
+2021-11-14 22:06:43,285:httpfinal.py:	<socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47366)>	400
+
+2021-11-14 22:06:43,285:httpfinal.py:	<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47368)>	400
+
+2021-11-14 22:06:43,286:httpfinal.py:	<socket.socket fd=28, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47370)>	400
+
+2021-11-14 22:06:44,772:httpfinal.py:	<socket.socket fd=29, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47372)>	403
+
+2021-11-14 22:06:44,773:httpfinal.py:	<socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47376)>	403
+
+2021-11-14 22:06:44,773:httpfinal.py:	<socket.socket fd=30, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47374)>	403
+
+2021-11-14 22:06:44,775:httpfinal.py:	<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47378)>	400
+
+2021-11-14 22:06:44,777:httpfinal.py:	<socket.socket fd=31, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47382)>	400
+
+2021-11-14 22:06:44,777:httpfinal.py:	<socket.socket fd=9, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47380)>	400
+
+2021-11-14 22:06:46,207:httpfinal.py:	<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47388)>	403
+
+2021-11-14 22:06:46,207:httpfinal.py:	<socket.socket fd=32, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47386)>	403
+
+2021-11-14 22:06:46,207:httpfinal.py:	<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47390)>	403
+
+2021-11-14 22:06:46,211:httpfinal.py:	<socket.socket fd=33, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47392)>	400
+
+2021-11-14 22:06:46,212:httpfinal.py:	<socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47394)>	400
+
+2021-11-14 22:06:46,212:httpfinal.py:	<socket.socket fd=34, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47396)>	400
+
+2021-11-14 22:10:17,510:httpfinal.py:	127.0.0.1	47440	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:10:17,510:httpfinal.py:	127.0.0.1	47438	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:10:17,510:httpfinal.py:	127.0.0.1	47442	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:10:17,510:httpfinal.py:	<socket.socket fd=35, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47438)>	505
+
+2021-11-14 22:10:17,510:httpfinal.py:	<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47442)>	505
+
+2021-11-14 22:10:17,510:httpfinal.py:	<socket.socket fd=36, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:10:38,099:httpfinal.py:	<socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47450)>	403
+
+2021-11-14 22:10:38,099:httpfinal.py:	<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47452)>	403
+
+2021-11-14 22:10:38,100:httpfinal.py:	<socket.socket fd=37, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47454)>	403
+
+2021-11-14 22:10:38,105:httpfinal.py:	127.0.0.1	47456	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:10:38,105:httpfinal.py:	127.0.0.1	47460	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:10:38,105:httpfinal.py:	<socket.socket fd=38, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:10:38,105:httpfinal.py:	127.0.0.1	47458	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:10:38,105:httpfinal.py:	<socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:10:38,106:httpfinal.py:	<socket.socket fd=39, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:23:20,121:httpfinal.py:	<socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47590)>	403
+
+2021-11-14 22:23:20,122:httpfinal.py:	<socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47592)>	403
+
+2021-11-14 22:23:20,122:httpfinal.py:	<socket.socket fd=40, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 47594)>	403
+
+2021-11-14 22:23:20,127:httpfinal.py:	127.0.0.1	47598	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:23:20,127:httpfinal.py:	127.0.0.1	47600	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:23:20,127:httpfinal.py:	127.0.0.1	47596	POST /home/shantanu/http-server/post.txt HTTP/1.1	/home/shantanu/http-server/post.txt	200
+
+2021-11-14 22:23:20,127:httpfinal.py:	<socket.socket fd=42, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:23:20,127:httpfinal.py:	<socket.socket fd=41, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:23:20,128:httpfinal.py:	<socket.socket fd=23, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8888)>	505
+
+2021-11-14 22:23:20,129:httpfinal.py:	127.0.0.1	47602	DELETE /home/shantanu/http-serverdelete1.txt HTTP/1.1	/home/shantanu/http-serverdelete1.txt	400
+
+2021-11-14 22:23:20,131:httpfinal.py:	127.0.0.1	47606	DELETE /home/shantanu/http-serverdelete2.txt HTTP/1.1	/home/shantanu/http-serverdelete2.txt	400
+
+2021-11-14 22:23:20,131:httpfinal.py:	127.0.0.1	47604	DELETE /home/shantanu/http-serverdelete3.txt HTTP/1.1	/home/shantanu/http-serverdelete3.txt	400
+
